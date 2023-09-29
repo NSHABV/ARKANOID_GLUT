@@ -371,3 +371,13 @@ Sn_BonusAttribute Sn_StandardGem::getBonusType()
 {
     return m_bonusAttr;
 }
+
+void Sn_StandardGem::setSpeedUp(bool status)
+{
+    m_speedupBall = status;
+}
+
+bool Sn_StandardGem::getSpeedUp()
+{
+    return m_speedupBall;
+}

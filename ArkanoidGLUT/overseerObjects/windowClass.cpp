@@ -102,7 +102,8 @@ void Sn_GemContainer::generateGems()
                 gemCreated->setIndestructible(true);
                 gemCreated->setColor(Sn_ColorIdentifier::tealRGB);
             }
-            
+            if (invincibilityRoll < 81 && invincibilityRoll > 75)
+                gemCreated->setSpeedUp(true);
             if (bonusRoll >= 80 && bonusRoll <= 83)
                 gemCreated->setBonus(Sn_BonusAttribute::bottomOneUse);
             else if (bonusRoll >= 84 && bonusRoll <= 87)
@@ -159,6 +160,8 @@ void Sn_GemContainer::idleFunc()
         {
             m_score++;
             gem->loseLife();
+            if (gem->getSpeedUp())
+                m_ball->ballSpeedUp();
         }
         if (timeElapsed < 0.0)
             timeElapsed = 0;

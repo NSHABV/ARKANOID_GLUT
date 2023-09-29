@@ -30,6 +30,8 @@ public:
     int getLives();
     Sn_BonusAttribute getBonusType();
     void setBonus(Sn_BonusAttribute bonus);
+    void setSpeedUp(bool status);
+    bool getSpeedUp();
 protected:
     virtual void setObjectCoords() override;
     void handleReflection(double time, const Sn_Vector &pointCoords, Sn_Ball *ball, double &elapsedTime);
@@ -38,4 +40,5 @@ protected:
     int m_livesRemaining;
     bool m_isIndestructible;
     Sn_BonusAttribute m_bonusAttr;
+    bool m_speedupBall = false;
 };
